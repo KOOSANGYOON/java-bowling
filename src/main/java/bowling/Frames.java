@@ -9,9 +9,9 @@ public class Frames {
 		
 	}
 
-	public int recentIndex() {
-		return frames.size();
-	}
+//	public int recentIndex() {
+//		return frames.size();
+//	}
 
 	public void addFrame(Frame frame) {
 		frames.add(frame);
