@@ -39,7 +39,7 @@ public class FrameTest {
 	public void getNormalStatus() {
 		frame.addScore(2);
 		frame.addScore(3);
-		assertEquals("|" + "3", frame.changeFormat());
+		assertEquals("2" + "|" + "3", frame.changeFormat());
 	}
 
 	@Test
@@ -84,4 +84,30 @@ public class FrameTest {
 		finalFrame.addScore(8);
 		assertEquals(true, finalFrame.isNotEnd());
 	}
+	
+	@Test
+	public void makeTotalScoreTest() {
+		frame.addScore(8);
+		
+		int total = frame.makeTotalScore(0);
+		assertEquals(null, total);
+	}
+	
+	@Test
+	public void makeTotalScoreTest2() {
+		frame.addScore(8);
+		frame.addScore(1);
+		
+		int total = frame.makeTotalScore(0);
+		assertEquals(9, total);
+	}
+	
+//	@Test
+//	public void makeTotalScoreTest3() {
+//		frame.addScore(9);
+//		frame.addScore(1);
+//		
+//		int total = frame.makeTotalScore();
+//		assertEquals(9, total);
+//	}
 }
